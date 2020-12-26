@@ -8,7 +8,7 @@
 .checkout__ad {
     width: 100%;
     margin-bottom: 10px;
-
+    max-height: 90px;
 }
 
 .checkout__title {
