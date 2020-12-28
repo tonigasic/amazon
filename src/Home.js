@@ -16,14 +16,14 @@ function Home() {
                     <Product
                         id="1"
                         title="HUAWEI FreeBuds Pro, True Wireless Bluetooth Headphones with Intelligent Noise Cancellation (Dynamic Noise Cancellation), 3 Microphone System, Wireless Fast Charge, Ceramic White"
-                        price={24.99}
+                        price={24.50}
                         image="https://images-na.ssl-images-amazon.com/images/I/51IUWtql1-L._AC_SL1500_.jpg"
                         rating={4}
                     />
                     <Product
                         id="6"
                         title="DO10_D Fine with D Fine+ Speaker, 1 speaker black"
-                        price={14.99}
+                        price={14.50}
                         image="https://images-na.ssl-images-amazon.com/images/I/61TmN45tnNL._AC_SL1000_.jpg"
                         rating={2}
                     />
@@ -39,14 +39,14 @@ function Home() {
                     <Product
                         id="3"
                         title="Bio Retinol Serum II Satin Natural 100ml"
-                        price={4.49}
+                        price={4.50}
                         image="https://images-na.ssl-images-amazon.com/images/I/61s0YoDA00L._SL1379_.jpg"
                         rating={3}
                     />
                     <Product
                         id="4"
                         title="ZACO Robot Vacuum Cleaner with Wiping Function"
-                        price={100.00}
+                        price={100}
                         image="https://images-na.ssl-images-amazon.com/images/I/71j5vuttlxL._AC_SL1500_.jpg"
                         rating={1}
                     />
@@ -55,7 +55,7 @@ function Home() {
                     <Product
                         id="5"
                         title="Yonmig Smartwatch, Fitness Wristband, Tracker, Full Touchscreen Watch, Waterproof IP68 Wristwatch, Smartwatch with Pedometer, Heart Rate Monitor, Stopwatch, Sports Watch, Bluetooth, for iOS Android, Women, Men pink"
-                        price={37.99}
+                        price={37}
                         image="https://images-na.ssl-images-amazon.com/images/I/81-RdJ72sRL._AC_SL1500_.jpg"
                         rating={4}
                     />
