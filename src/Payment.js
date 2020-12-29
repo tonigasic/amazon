@@ -7,6 +7,7 @@ import {CardElement, useElements, useStripe} from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import {getBasketTotal} from "./Reducer";
 import axios from "./axios";
+import {db} from './firebase';
 
 function Payment() {
     const history = useHistory();
@@ -34,28 +35,46 @@ function Payment() {
 
         getClientSecret();
     }, [basket]);
-    console.log('secreeettttt', clientSecret)
-
-
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        setProcessing(true);
+        if (user) {
+            setProcessing(true);
 
-        const payload = await stripe.confirmCardPayment(clientSecret, {
-            payment_method: {
-                card: elements.getElement(CardElement)
-            }
-        })
-        .then(({ paymentIntent }) => {
-            //payment intent = paymentConfirmation
-            setSucceeded(true);
-            setError(null);
-            setProcessing(false);
+            const payload = await stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: elements.getElement(CardElement)
+                }
+            })
+                .then(({ paymentIntent }) => {
+                    //payment intent = paymentConfirmation
 
-            history.replace('/orders');
-        })
+                    db
+                        .collection('users')
+                        .doc(user?.uid)
+                        .collection('orders')
+                        .doc(paymentIntent.id)
+                        .set({
+                            basket: basket,
+                            amount: paymentIntent.amount,
+                            created: paymentIntent.created
+                        })
+
+                    setSucceeded(true);
+                    setError(null);
+                    setProcessing(false);
+
+                    dispatch({
+                        type: 'EMPTY_BASKET'
+                    })
+
+                    history.replace('/orders');
+                })
+        }
+        else {
+            history.push('/login')
+        }
     }
 
     const handleChange = (event) => {
@@ -82,13 +101,15 @@ function Payment() {
                         <h3>Review items and delivery</h3>
                     </div>
                     <div className="payment__items">
-                        {basket.map(item => (
+                        {basket.map((item, index) => (
                             <CheckoutProduct
+                                key={index}
                                 id={item.id}
                                 price={item.price}
                                 image={item.image}
                                 rating={item.rating}
                                 title={item.title}
+                                quantity={item?.quantity}
                             />
                         ))}
                     </div>

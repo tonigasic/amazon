@@ -8,6 +8,7 @@ import Login from "./Login";
 import { auth } from "./firebase";
 import {useStateValue} from "./StateProvider";
 import Payment from "./Payment";
+import Orders from "./Orders";
 import {loadStripe} from '@stripe/stripe-js';
 import {Elements} from '@stripe/react-stripe-js';
 
@@ -20,7 +21,6 @@ function App() {
     // will only run once when the app component loads...
     useEffect(()=> {
         auth.onAuthStateChanged(authUser => {
-            console.log('ussseerrr', authUser);
             if (authUser) {
                 dispatch({
                     type: 'SET_USER',
@@ -52,6 +52,10 @@ function App() {
                         <Elements stripe={promise}>
                             <Payment/>
                         </Elements>
+                    </Route>
+                    <Route path="/orders">
+                        <Header/>
+                        <Orders/>
                     </Route>
                     <Route path="/">
                         <Header/>
