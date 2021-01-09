@@ -15,6 +15,8 @@ After the login the user-data will be stored in the React context and used throu
 
 ## The Amazon App
 
+![alt text](https://raw.githubusercontent.com/tonigasic/portfolio/master/src/assets/images/Screenshot_1.png)
+
 
 After the login the user will automatically be redirected to the home page. There the user can add products to the basket or even search for them in the header.
 
