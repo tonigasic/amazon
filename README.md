@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Amazon Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an E-Commerce website clone of Amazon Shopping site.
 
-## Available Scripts
+## Authentication
 
-In the project directory, you can run:
 
-### `yarn start`
+Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+In order to buy a product on this page the user must authenticate. To do that he must click on the "Sign In" button in the header.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+After that the user will be redirected to the Login page. The user can then Login or create a new account. In this app the user can use dummy data to create the account so he does not have to enter his real email address or password. After that he can use that data to login.
 
-### `yarn test`
+After the login the user-data will be stored in the React context and used throughout the app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## The Amazon App
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After the login the user will automatically be redirected to the home page. There the user can add products to the basket or even search for them in the header.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Once the user has picked his products and added them to the basket he now can click on the basket icon on the right side of the header.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+On the checkout page the user can see the products he added to the basket and also the subtotal. There is also an option to remove the products if he changed his mind.
 
-### `yarn eject`
+If the user clicks on the "Proceed to checkout" button he will be redirected on the payment page. There he can once more see his projects and the subtotal.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In this section, in order to buy the products, the user must enter his Credit-Card data. Since this is a demo app feel free to use the following data:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### `Credit-Card number: 4242 4242 4242 4242`
+#### `Expiration date: 04 / 24`
+#### `Security code: 242`
+#### `Post Code: 42424`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Once the user entered the Credit-Card data and pressed the "Buy Now" button he will be redirected to the Orders page where the user can see all the orders he made.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+From here if he wants to return to the home page all he needs to do is to press the amazon logo in the header.
